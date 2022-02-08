@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Counter.css";
+import style from "./Counter.module.css";
 
 const Counter = ({number, color, onIncrement, onDecrement, onSetColor}) => {
     return (
         <div 
-            className="Counter" 
+            className={style.Counter} 
             onClick={onIncrement} 
             onContextMenu={
                 (e) => { 
@@ -14,7 +14,8 @@ const Counter = ({number, color, onIncrement, onDecrement, onSetColor}) => {
                 }
             } 
             onDoubleClick={onSetColor}
-            style={{backgroundColor: color}}>
+            style={{backgroundColor: color}}
+        >
                 {number}
         </div>
     );
