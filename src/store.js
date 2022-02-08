@@ -1,16 +1,18 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
 
-const toDos = createSlice({
-  name: "toDosReducer",
-  initialState: [],
-  reducers: {
-    add: (state, action) => {
-      state.push({ text: action.payload, id: Date.now() });
-    },
-    remove: (state, action) => state.filter(toDo => toDo.id !== action.payload)
-  }
+import toDos from "./reducers/toDosReducer"
+import toDos2 from "./reducers/toDos2Reducer"
+import CounterReducer from "./reducers/CounterReducer"
+
+const reducers = combineReducers({
+  toDos: toDos.reducer
+  , toDos2: toDos2.reducer
+  , CounterReducer: CounterReducer.reducer
 });
 
-export const { add, remove } = toDos.actions;
+export default configureStore({ reducer: reducers });
 
-export default configureStore({ reducer: toDos.reducer });
+export const { add, remove } = toDos.actions;
+export const { add2, remove2 } = toDos2.actions;
+export const { increment, decrement, setColor } = CounterReducer.actions;
