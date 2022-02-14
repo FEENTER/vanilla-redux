@@ -11,6 +11,7 @@ const reducers = combineReducers({
   , CounterReducer: CounterReducer.reducer
 });
 
+// 최종
 export default configureStore({ reducer: reducers, devTools: true });
 
 export const { add, remove } = toDos.actions;
