@@ -38,7 +38,7 @@ const mapDispatchToProps = (dispatch) => ({
         const random = Math.floor(Math.random() * 13);
         const color = colors[random];
 
-        // dispatch(ActionTypes.setColor(color));
+        dispatch(ActionTypes.setColor(color));
         dispatch(getPosts());
     }
 });
