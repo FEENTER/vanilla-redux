@@ -11,7 +11,7 @@ const reducers = combineReducers({
   , CounterReducer: CounterReducer.reducer
 });
 
-export default configureStore({ reducer: reducers });
+export default configureStore({ reducer: reducers, devTools: true });
 
 export const { add, remove } = toDos.actions;
 export const { add2, remove2 } = toDos2.actions;
