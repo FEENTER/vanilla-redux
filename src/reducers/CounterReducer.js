@@ -4,10 +4,11 @@ export const getPosts = createAsyncThunk(
   'CounterReducer/getPosts',
   async (userData) => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts`).then(
-    (data) => data.json()
-  )
-  return res
-})
+      (data) => data.json()
+    )
+    return res;
+  }
+);
 
 export default createSlice({
   name: "CounterReducer",
