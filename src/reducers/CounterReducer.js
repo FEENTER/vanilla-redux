@@ -14,25 +14,25 @@ export default createSlice({
   initialState: {number: 0, color: 'black', loading: false, entities: []},
   reducers: {
     increment : (state, action) => {
-      state.number = state.number + 1
+      state.number = state.number + 1;
     },
     decrement : (state, action) => {
-      state.number = state.number - 1
+      state.number = state.number - 1;
     },
     setColor : (state, action) => {
-      state.color = action.payload
+      state.color = action.payload;
     }
   },
   extraReducers: {
     [getPosts.pending]: (state) => {
-      state.loading = true
+      state.loading = true;
     },
     [getPosts.fulfilled]: (state, action) => {
-      state.loading = false
-      state.entities = action.payload
+      state.loading = false;
+      state.entities = action.payload;
     },
     [getPosts.rejected]: (state) => {
-      state.loading = false
+      state.loading = false;
     },
   }
 });
