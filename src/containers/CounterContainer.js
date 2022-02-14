@@ -38,8 +38,9 @@ const mapDispatchToProps = (dispatch) => ({
         const random = Math.floor(Math.random() * 13);
         const color = colors[random];
 
-        dispatch(ActionTypes.setColor(color));
+        // 비동기 호출
         dispatch(getPosts());
+        dispatch(ActionTypes.setColor(color));
     }
 });
 
