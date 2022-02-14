@@ -11,7 +11,7 @@ export const getPosts = createAsyncThunk(
 
 export default createSlice({
   name: "CounterReducer",
-  initialState: {number: 0, color: 'black', loading: false, entities: []},
+  initialState: {number: 0, color: 'black', loading: false, entities: [], error: ''},
   reducers: {
     increment : (state, action) => {
       state.number = state.number + 1;
@@ -31,8 +31,10 @@ export default createSlice({
       state.loading = false;
       state.entities = action.payload;
     },
-    [getPosts.rejected]: (state) => {
+    [getPosts.rejected]: (state, action) => {
       state.loading = false;
+      // action.error인 것을 주의
+      state.error = action.error; 
     },
   }
 });
