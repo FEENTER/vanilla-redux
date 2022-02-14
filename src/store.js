@@ -16,3 +16,4 @@ export default configureStore({ reducer: reducers, devTools: true });
 export const { add, remove } = toDos.actions;
 export const { add2, remove2 } = toDos2.actions;
 export const { increment, decrement, setColor } = CounterReducer.actions;
+export const { getPosts } = CounterReducer;
