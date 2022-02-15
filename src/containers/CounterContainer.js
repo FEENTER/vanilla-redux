@@ -1,7 +1,7 @@
 import Counter from '../components/Counter';
 import { connect } from 'react-redux';
 import * as ActionTypes from "../store";
-import { getPosts } from "../reducers/CounterReducer"
+import { extraRGetPosts } from "../reducers/CounterReducer"
 
 // store 안의 state 값을 props 로 연결해줍니다.
 const mapStateToProps = (state) => ({
@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => ({
         const color = colors[random];
 
         // 비동기 호출
-        dispatch(getPosts());
+        dispatch(extraRGetPosts());
         dispatch(ActionTypes.setColor(color));
     }
 });

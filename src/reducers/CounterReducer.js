@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getPosts = createAsyncThunk(
-  'CounterReducer/getPosts',
+export const extraRGetPosts = createAsyncThunk(
+  'CounterReducer/extraRGetPosts',
   async (userData) => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts`).then(
       (data) => data.json()
@@ -25,14 +25,14 @@ export default createSlice({
     }
   },
   extraReducers: {
-    [getPosts.pending]: (state) => {
+    [extraRGetPosts.pending]: (state) => {
       state.loading = true;
     },
-    [getPosts.fulfilled]: (state, action) => {
+    [extraRGetPosts.fulfilled]: (state, action) => {
       state.loading = false;
       state.entities = action.payload;
     },
-    [getPosts.rejected]: (state, action) => {
+    [extraRGetPosts.rejected]: (state, action) => {
       state.loading = false;
       // action.error인 것을 주의
       state.error = action.error; 
