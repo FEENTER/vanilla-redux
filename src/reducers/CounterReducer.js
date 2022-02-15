@@ -14,10 +14,10 @@ export default createSlice({
   name: "CounterReducer",
   initialState: {number: 0, color: 'black', loading: false, entities: [], error: ''},
   reducers: {
-    increment : (state, action) => {
+    increment(state, action) {
       state.number = state.number + 1;
     },
-    decrement : (state, action) => {
+    decrement(state, action) {
       state.number = state.number - 1;
     },
     setColor : (state, action) => {
