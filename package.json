@@ -38,7 +38,7 @@
     ]
   },
   "main": "index.js",
-  "repository": "https://192.168.0.200/homes/react-redux/react-redux.git",
+  "repository": "https://github.com/FEENTER/vanilla-redux.git",
   "author": "Tobi <webhack119@gmail.com>",
   "license": "MIT"
 }
